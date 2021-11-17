@@ -1,0 +1,34 @@
+/dts-v1/;
+/plugin/;
+
+#include "../imx6ul-pinfunc.h"
+#include "./dt-bindings/gpio/gpio.h"
+
+/{
+    fragment@0 {
+        target-path = "/";
+        __overlay__{
+            red_led_pwm {
+                 pinctrl-names = "default";
+                 compatible = "red_led_pwm";
+                 pinctrl-0 = <&red_led_pwm>;
+            
+                front {
+                        pwm-names = "red_led_pwm3";
+                        pwms = <&pwm3 0 50000>;
+                };
+            };
+        };
+    };
+
+    fragment@1 {
+        target = <&iomuxc>;
+        __overlay__{
+        red_led_pwm: ledsgrp {
+                            fsl,pin = <
+                                 MX6UL_PAD_GPIO1_IO04__PWM3_OUT    0x1b0b0
+                            >;
+                        };
+        };
+    };
+};

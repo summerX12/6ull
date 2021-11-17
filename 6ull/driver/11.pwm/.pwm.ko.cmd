@@ -1,0 +1,1 @@
+cmd_/home/summer/Documents/6ULL/11.pwm/pwm.ko := arm-linux-gnueabihf-ld -r  -EL -T /home/summer/Documents/6ULL/ebf_linux_kernel/scripts/module-common.lds -T /home/summer/Documents/6ULL/ebf_linux_kernel/arch/arm/kernel/module.lds  --build-id  -o /home/summer/Documents/6ULL/11.pwm/pwm.ko /home/summer/Documents/6ULL/11.pwm/pwm.o /home/summer/Documents/6ULL/11.pwm/pwm.mod.o ;  true
